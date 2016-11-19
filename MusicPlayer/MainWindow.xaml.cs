@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using System.Windows.Forms;
 
 namespace MusicPlayer
 {
@@ -22,6 +10,22 @@ namespace MusicPlayer
     {
         public MainWindow() {
             InitializeComponent();
+        }
+        private MusicPlayerClass player = new MusicPlayerClass(); // Initialize the MusicPlayer object
+        private void SelectButton_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog(); //Opens the dialog to choose a file
+            openFileDialog.Filter = "All files|*.*"; 
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                player.changeMusic(openFileDialog.FileName); //If everything is ok, we initialize the player with the chosen file.
+            }
+        }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e) {
+            player.playMusic();
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e) {
+            player.pauseMusic();
         }
     }
 }

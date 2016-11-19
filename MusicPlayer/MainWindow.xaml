@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button x:Name="SelectButton" Content="Select song" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103" Height="37" Click="SelectButton_Click"/>
+        <Button x:Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="103" Height="37" Click="PlayButton_Click"/>
+        <Button x:Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="103" Height="37" Click="PauseButton_Click"/>
     </Grid>
 </Window>
