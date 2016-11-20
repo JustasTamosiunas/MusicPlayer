@@ -16,16 +16,16 @@ namespace MusicPlayer
             OpenFileDialog openFileDialog = new OpenFileDialog(); //Opens the dialog to choose a file
             openFileDialog.Filter = "All files|*.*"; 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-                player.changeMusic(openFileDialog.FileName); //If everything is ok, we initialize the player with the chosen file.
+                player.ChangeMusic(openFileDialog.FileName); //If everything is ok, we initialize the player with the chosen file.
             }
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e) {
-            player.playMusic();
+            player.PlayMusic();
         }
 
         private void PauseButton_Click(object sender, RoutedEventArgs e) {
-            player.pauseMusic();
+            player.PauseMusic();
         }
     }
 }
