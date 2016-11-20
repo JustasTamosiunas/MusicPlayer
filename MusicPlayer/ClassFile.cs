@@ -69,6 +69,7 @@ namespace MusicPlayer {
         string name;
         List<string> songList = new List<string>(); //strings with all song Paths
         int position;
+
         public string NextSong() {
             if (!(position == songList.Count-1)) { //if it's not the last song, return the next one. If it is, loop around.
                 position++; 

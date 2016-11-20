@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace MusicPlayer
@@ -26,6 +27,16 @@ namespace MusicPlayer
 
         private void PauseButton_Click(object sender, RoutedEventArgs e) {
             player.PauseMusic();
+        }
+
+        private void SelectMultipleButton_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog(); //Opens the dialog to choose a file
+            openFileDialog.Filter = "All files|*.*";
+            openFileDialog.Multiselect = true;
+            Playlist temp = new Playlist();
+            temp.Name = "test";
+            temp.Position = 0;
+            temp.SongList = openFileDialog.FileNames.ToList();
         }
     }
 }
