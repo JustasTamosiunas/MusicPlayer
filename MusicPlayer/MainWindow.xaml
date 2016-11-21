@@ -7,5 +7,7 @@
         <Button x:Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="103" Height="37" Click="PlayButton_Click"/>
         <Button x:Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="103" Height="37" Click="PauseButton_Click"/>
         <Button x:Name="SelectMultipleButton" Content="SelectMultiple" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.895,0.49" Height="37" Click="SelectMultipleButton_Click"/>
+        <Button x:Name="NextSongButton" Content="Next Song" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.895,0.49" Height="37" Click="NextSongButton_Click"/>
+        <Button x:Name="PrevSongButton" Content="Previous Song" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.895,0.49" Height="37" Click="PrevSongButton_Click"/>
     </Grid>
 </Window>

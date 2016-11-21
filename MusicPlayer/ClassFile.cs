@@ -80,6 +80,16 @@ namespace MusicPlayer {
             }
         }
 
+        public string PrevSong() {
+            if (!(position == 0)) { //if it's not the last song, return the next one. If it is, loop around.
+                position--;
+                return songList[position];
+            } else {
+                position = songList.Count-1;
+                return songList[position];
+            }
+        }
+
         public string Name { get; set; }
 
         public int Position { get; set; }

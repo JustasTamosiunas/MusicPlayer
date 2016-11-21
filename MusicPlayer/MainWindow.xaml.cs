@@ -13,6 +13,9 @@ namespace MusicPlayer
             InitializeComponent();
         }
         private MusicPlayerClass player = new MusicPlayerClass(); // Initialize the MusicPlayer object
+
+        Playlist current;
+
         private void SelectButton_Click(object sender, RoutedEventArgs e) {
             OpenFileDialog openFileDialog = new OpenFileDialog(); //Opens the dialog to choose a file
             openFileDialog.Filter = "All files|*.*"; 
@@ -37,6 +40,18 @@ namespace MusicPlayer
             temp.Name = "test";
             temp.Position = 0;
             temp.SongList = openFileDialog.FileNames.ToList();
+            current = temp;
+            player.ChangeMusic(current.ReadSong(current.Position));
+        }
+
+        private void NextSongButton_Click(object sender, RoutedEventArgs e) {
+            current.NextSong();
+            player.ChangeMusic(current.ReadSong(current.Position));
+        }
+
+        private void PrevSongButton_Click(object sender, RoutedEventArgs e) {
+            current.PrevSong();
+            player.ChangeMusic(current.ReadSong(current.Position));
         }
     }
 }
