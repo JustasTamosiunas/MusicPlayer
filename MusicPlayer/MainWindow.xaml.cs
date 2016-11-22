@@ -36,12 +36,14 @@ namespace MusicPlayer
             OpenFileDialog openFileDialog = new OpenFileDialog(); //Opens the dialog to choose a file
             openFileDialog.Filter = "All files|*.*";
             openFileDialog.Multiselect = true;
-            Playlist temp = new Playlist();
-            temp.Name = "test";
-            temp.Position = 0;
-            temp.SongList = openFileDialog.FileNames.ToList();
-            current = temp;
-            player.ChangeMusic(current.ReadSong(current.Position));
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                Playlist temp = new Playlist();
+                temp.Name = "test";
+                temp.Position = 0;
+                temp.AddSong(openFileDialog.FileNames.ToList());
+                current = temp;
+                player.ChangeMusic(current.ReadSong(current.Position));
+            }
         }
 
         private void NextSongButton_Click(object sender, RoutedEventArgs e) {

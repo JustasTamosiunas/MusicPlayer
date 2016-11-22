@@ -85,16 +85,16 @@ namespace MusicPlayer {
                 position--;
                 return songList[position];
             } else {
-                position = songList.Count-1;
+                position = songList.Count - 1;
                 return songList[position];
             }
         }
 
-        public string Name { get; set; }
-
         public int Position { get; set; }
 
         public List<string> SongList { get; set; }
+
+        public string Name { get; set; }
 
         public string ReadSong(int index) {
             return songList[index];
@@ -102,6 +102,12 @@ namespace MusicPlayer {
 
         public void AddSong(string path) {
             songList.Add(path);
+        }
+
+        public void AddSong(List<string> paths) {
+            for (int i = 0; i < paths.Count; i++) {
+                songList.Add(paths[i]);
+            }
         }
 
         public void Save() {
